@@ -5,7 +5,7 @@ namespace ExampleClaimOfResponsability.Entities
         public int Id { get; set; }
         public string? ExternalId { get; set; }
 
-        public string MeioPagamento { get; set; }
+        public string? MeioPagamento { get; set; }
         public CreditCardTransaction? CreditCard { get; set; }
 
         public PixTransaction? Pix { get; set; }

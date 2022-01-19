@@ -6,10 +6,7 @@ namespace ExampleClaimOfResponsability.Handler
     {
         public abstract string Valid(string payMethod, Charge charge);
 
-        protected IValidateChargeHandler Successor;
-        public void SetSuccessor(IValidateChargeHandler handler)
-        {
-            Successor = handler;
-        }
+        protected IValidateChargeHandler? Successor;
+        public void SetSuccessor(IValidateChargeHandler handler) => Successor = handler;
     }
 }

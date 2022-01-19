@@ -12,6 +12,7 @@ namespace ExampleClaimOfResponsability.Service
             {
                 Id = 1,
                 ExternalId = "ch_123124124",
+                MeioPagamento = "debit_card",
                 CreditCard = new CreditCardTransaction()
                 {
                     Id = 1, 
@@ -22,6 +23,10 @@ namespace ExampleClaimOfResponsability.Service
             var validator = new SetupValidateChargeHandler();
 
             var resultValidation = validator.Valid(payMethod, charge);
+
+            if(!string.IsNullOrEmpty(resultValidation)) throw new Exception(resultValidation);
+
+            charge.MeioPagamento = payMethod;
 
             return charge;
         }
